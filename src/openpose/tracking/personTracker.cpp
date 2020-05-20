@@ -424,14 +424,6 @@ namespace op
     {
         try
         {
-            // Sanity Checks
-            if (poseKeypoints.getSize(0) > 1)
-                 error("Person tracking (`--tracking` flag) is in experimental phase and only allows tracking of up"
-                       " to 1 person at the time. Please, also include the `--number_people_max 1` flag when using"
-                       " the `--tracking` flag. Tracking more than one person at the time is not expected as"
-                       " short- nor medium-term goal.",
-                       __LINE__, __FUNCTION__, __FILE__);
-
             /*
              * 1. Get poseKeypoints for all people - Checks
              * 2. If last image is empty or mPersonEntries is empty (& poseKeypoints and poseIds has data or crash it)
