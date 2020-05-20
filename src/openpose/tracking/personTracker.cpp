@@ -101,6 +101,7 @@ namespace op
                 if (scaleVarying)
                 {
                     pyramidImagesPrevious.clear();
+                    pyramidImagesCurrent.clear();
                     lkSize = computePersonScale(oldPersonEntry, imageCurrent);
                 }
                 if (trackVelocity)
@@ -108,7 +109,7 @@ namespace op
                     newPersonEntry.keypoints = oldPersonEntry.getPredicted();
                     pyramidalLKOcv(oldPersonEntry.keypoints, newPersonEntry.keypoints, pyramidImagesPrevious,
                                    pyramidImagesCurrent, oldPersonEntry.status, imagePrevious, imageCurrent, levels,
-                                   patchSize, true);
+                                   lkSize, true);
                 }
                 else
                     pyramidalLKOcv(oldPersonEntry.keypoints, newPersonEntry.keypoints, pyramidImagesPrevious,
